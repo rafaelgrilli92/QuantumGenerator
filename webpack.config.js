@@ -34,12 +34,6 @@ module.exports = {
 	      test: /\.css$/,
 	      loaders: ['style', 'css']
 	    }, {
-	      test: /\.scss$/,
-	      loaders: ['style', 'css', 'postcss', 'sass']
-	    }, {
-	      test: /\.less$/,
-	      loaders: ['style', 'css', 'less']
-	    }, {
 	      test: /\.woff$/,
 	      loader: "url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]"
 	    }, {
