@@ -3,18 +3,7 @@ var path = require('path');
 
 module.exports = {
 	entry: [
-		'script!jquery/dist/jquery.min.js',
-		'script!foundation-sites/dist/foundation.min.js',
 		'./app/app.jsx'
-	],
-	externals: {
-		jquery: 'jQuery'
-	},
-	plugins: [
-		new webpack.ProvidePlugin({
-			'$': 'jquery',
-			'jQuery': 'jquery'
-		})
 	],
 	output: {
 		path: __dirname,
@@ -22,10 +11,13 @@ module.exports = {
 	},
 	resolve: {
 		root: __dirname,
+		modulesDirectories: [
+			'node_modules', 
+			'./app/components',
+			'./app/api'
+		],
 		alias: {
-			ApplicationStyles: 'app/styles/app.scss',
-			Main: 'app/components/Layout/Main.jsx',
-			Nav: 'app/components/Layout/Nav.jsx'
+			ApplicationStyles: 'app/styles/app.css'
 		},
 		extensions: ['','.js', '.jsx']
 	},
@@ -33,16 +25,30 @@ module.exports = {
 		loaders: [{
 			loader: 'babel-loader',
 			query: {
-				presets: ['react', 'es2015']
+				presets: ['react', 'es2015', 'stage-0']
 			},
 			test: /\.jsx?$/,
 			exclude: /(node_module|bower_components)/
-		}]
-	},
-	sassLoader: {
-		includePaths: [
-			path.resolve(__dirname, './node_modules/foundation-sites/scss')
-		]
+		}, 
+		{
+	      test: /\.css$/,
+	      loaders: ['style', 'css']
+	    }, {
+	      test: /\.scss$/,
+	      loaders: ['style', 'css', 'postcss', 'sass']
+	    }, {
+	      test: /\.less$/,
+	      loaders: ['style', 'css', 'less']
+	    }, {
+	      test: /\.woff$/,
+	      loader: "url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]"
+	    }, {
+	      test: /\.woff2$/,
+	      loader: "url-loader?limit=10000&mimetype=application/font-woff2&name=[path][name].[ext]"
+	    }, {
+	      test: /\.(eot|ttf|svg|gif|png)$/,
+	      loader: "file-loader"
+	    }]
 	},
 	devtool: 'inline-source-map'
 };

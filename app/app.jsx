@@ -1,20 +1,15 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var { Route, Router, IndexRoute, hashHistory } = require('react-router');
-var Main = require('Main');
 
-// Load Foundation
-$(document).foundation();
+// Bootstrap CSS
+require("bootstrap/dist/css/bootstrap.css");
 
 // App CSS
-require('style!css!sass!ApplicationStyles');
+require('ApplicationStyles');
+
+var Main = require('Main');
 
 ReactDOM.render(
-	<Router history={hashHistory}>
-		<Route path='/' component={Main}>
-			{/*<IndexRoute component={Component1} />
-			<Route path="pageName" component={Component2} />*/}
-		</Route>
-	</Router>, 
+	<Main />, 
 	document.getElementById('app')
 );

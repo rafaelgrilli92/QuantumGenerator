@@ -1,0 +1,22 @@
+.container {
+	padding: 20px 10px;
+	text-align: center;
+}
+
+.central-box {    
+    max-width: 400px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.result table {
+	text-align: left;
+}
+
+.error {
+	color: red;
+}
+
+.result-list {
+	height: 150px;
+}
