@@ -17,8 +17,14 @@ $ npm start
 ```
 
 ## Built With
-
 * ReactJS
 * NodeJS
 * Bootstrap
 * ANU Quantum Random Numbers Server API
+
+## Project Time (in minutes)
+* Start Configuration: 55
+* API: 30
+* Form: 25
+* Result (Chart, Table, Messages): 100
+* TOTAL: 210 minutes (3 hours and 30 minutes)
