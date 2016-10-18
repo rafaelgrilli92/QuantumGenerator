@@ -1,5 +1,8 @@
 # Quantum Generator
-Using a 3rd Part API, this project could generate quantum numbers dynamically
+Using a 3rd Part API, this project could generate quantum numbers dynamically.
+
+I used a boilerplate which I've had done, but I needed to change somethings.
+I prefer to use a boilerplate because the start configuration always is quite similar and could take sometime to do it starting from zero.
 
 ## Getting Started
 Install the NPM Packages
